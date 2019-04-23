@@ -1,0 +1,37 @@
+version: 1.8.{build}
+image: Visual Studio 2017
+configuration: Release
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
+before_build:
+- ps: >-
+    function Set-VsixVersion {
+        param(
+           [Parameter(Mandatory=$true)]
+           [string]$manifestPath,
+           [Parameter(Mandatory=$true)]
+           [string]$Version
+        )
+        $manifestXml = [xml](Get-Content $manifestPath -Raw)
+        $manifestXml.PackageManifest.Metadata.Identity.Version = $Version
+        $manifestXml.save($manifestPath)
+    }
+
+    git submodule update --init --recursive
+    Set-VsixVersion -Version "$($env:APPVEYOR_BUILD_VERSION)" -manifestPath src\ExceptionAnalyzer\ExceptionAnalyzer.Vsix\source.extension.vsixmanifest
+    nuget restore src\ExceptionAnalyzer
+    dotnet restore src\ExceptionAnalyzer
+build:
+  project: src\ExceptionAnalyzer.sln
+  verbosity: minimal
+artifacts:
+- path: src\ExceptionAnalyzer\ExceptionAnalyzer.Vsix\bin\Release\ExceptionAnalyzer.vsix
+  name: ExceptionAnalyzer.vsix
+- path: src\ExceptionAnalyzer\ExceptionAnalyzer\bin\Debug\ExceptionAnalyzer.*.nupkg
+  name: ExceptionAnalyzer.nupkg
