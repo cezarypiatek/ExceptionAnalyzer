@@ -22,11 +22,10 @@ before_build:
         $manifestXml.PackageManifest.Metadata.Identity.Version = $Version
         $manifestXml.save($manifestPath)
     }
-
-    git submodule update --init --recursive
     Set-VsixVersion -Version "$($env:APPVEYOR_BUILD_VERSION)" -manifestPath src\ExceptionAnalyzer\ExceptionAnalyzer.Vsix\source.extension.vsixmanifest
-    nuget restore src\ExceptionAnalyzer
-    dotnet restore src\ExceptionAnalyzer
+- cmd: git submodule update --init --recursive
+- cmd: nuget restore src\ExceptionAnalyzer
+- cmd: dotnet restore src\ExceptionAnalyzer
 build:
   project: src\ExceptionAnalyzer.sln
   verbosity: minimal
