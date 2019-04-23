@@ -13,8 +13,7 @@ namespace ExceptionAnalyzer.Rules.ArgumentExceptionParameterName
         private const string DiagnosticId = "EX005";
         private static readonly LocalizableString Title = "ArgumentExceptionParameterName Title";
         private static readonly LocalizableString MessageFormat = "Containing method does not declare '{0}' parameter";
-        private const string Category = "Exceptions usages";
-        private static  readonly DiagnosticDescriptor Rule = new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Error, true);
+        private static  readonly DiagnosticDescriptor Rule = new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, RuleCategories.ExceptionUsages, DiagnosticSeverity.Error, true);
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } = ImmutableArray.Create(Rule);
 

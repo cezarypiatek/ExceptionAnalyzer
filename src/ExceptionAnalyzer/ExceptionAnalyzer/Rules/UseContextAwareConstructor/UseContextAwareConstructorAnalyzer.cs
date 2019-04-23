@@ -15,9 +15,7 @@ namespace ExceptionAnalyzer.Rules.UseContextAwareConstructor
 
         private static readonly LocalizableString MessageFormat = "Do not use standard exception constructor. Use one that accept context information";
 
-        private const string Category = "Exceptions usages";
-
-        private static DiagnosticDescriptor Rule = new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Error, true);
+        private static DiagnosticDescriptor Rule = new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, RuleCategories.ExceptionUsages, DiagnosticSeverity.Error, true);
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } =
             ImmutableArray.Create(Rule);

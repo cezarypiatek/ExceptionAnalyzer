@@ -18,11 +18,10 @@ namespace ExceptionAnalyzer.Rules.ProvideInnerExceptionInCatch
             private const string DiagnosticId = "EX003";
             private static readonly LocalizableString Title = "Always provide inner exception when throw from the catch clauses.";
             private static readonly LocalizableString MessageFormat = "Provide '{0}' as a inner exception when throw from the catch clauses";
-            private const string Category = "Exceptions usages";
 
             public static DiagnosticDescriptor Create()
             {
-                return new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Error, true);
+                return new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, RuleCategories.ExceptionUsages, DiagnosticSeverity.Error, true);
             }
         }
         private static class Rule2Container
@@ -30,11 +29,10 @@ namespace ExceptionAnalyzer.Rules.ProvideInnerExceptionInCatch
             private const string DiagnosticId = "EX004";
             private static readonly LocalizableString Title = "Always provide inner exception when throw from the catch clauses.";
             private static readonly LocalizableString MessageFormat = "Complete Catch declaration with exception variable and provide it as a inner exception when throw from the catch clauses";
-            private const string Category = "Exceptions usages";
 
             public static DiagnosticDescriptor Create()
             {
-                return new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Error, true);
+                return new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, RuleCategories.ExceptionUsages, DiagnosticSeverity.Error, true);
             }
         }
 

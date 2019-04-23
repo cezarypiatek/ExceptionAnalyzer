@@ -15,9 +15,8 @@ namespace ExceptionAnalyzer.Rules.ExceptionDrivenLogic
         public const string DiagnosticId = "EX006";
         internal static readonly LocalizableString Title = "Do not write logic driven by exceptions.";
         internal static readonly LocalizableString MessageFormat = "This exception is caught in this method. Try to convert try-catch statement into if-else statement.";
-        internal const string Category = "Exceptions usages";
 
-        internal static DiagnosticDescriptor Rule = new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Warning, true);
+        internal static DiagnosticDescriptor Rule = new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, RuleCategories.ExceptionUsages, DiagnosticSeverity.Warning, true);
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } = ImmutableArray.Create(Rule);
 
