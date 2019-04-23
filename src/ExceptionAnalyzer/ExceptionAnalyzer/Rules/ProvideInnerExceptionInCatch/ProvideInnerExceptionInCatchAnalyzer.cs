@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
+using ExceptionAnalyzer.Rules.UseMoreSpecificExceptionType;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -50,10 +52,7 @@ namespace ExceptionAnalyzer.Rules.ProvideInnerExceptionInCatch
             {
                 var catchClause = (CatchClauseSyntax) syntaxNodeContext.Node;
                 var exceptionVariable = catchClause.Declaration?.Identifier.Text;
-
-                var expressionFromThrowStatements = catchClause.Block.DescendantNodes().OfType<ThrowStatementSyntax>().Select(x=>x.Expression);
-                var expressionFromThrowExpressions = catchClause.Block.DescendantNodes().OfType<ThrowStatementSyntax>().Select(x=>x.Expression);
-                var allExpressions = expressionFromThrowStatements.Concat(expressionFromThrowExpressions).ToList();
+                var allExpressions = catchClause.Block.GetAllThrowExpressions();
 
                 if (allExpressions.Count == 0)
                 {

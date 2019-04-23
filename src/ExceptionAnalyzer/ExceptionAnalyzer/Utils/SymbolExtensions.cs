@@ -30,5 +30,20 @@ namespace ExceptionAnalyzer.Rules.UseMoreSpecificExceptionType
         {
             return parameter.Type.Name.Equals(typeName, StringComparison.OrdinalIgnoreCase);
         }
+
+        [Pure]
+        public static bool IsAssignableToType( [NotNull] this ITypeSymbol symbol, [NotNull] ITypeSymbol type)
+        {
+            var baseType = symbol;
+            do
+            {
+                if (type.Equals(baseType))
+                    return true;
+
+                baseType = baseType.BaseType;
+            } while (baseType != null);
+
+            return false;
+        }
     }
 }
