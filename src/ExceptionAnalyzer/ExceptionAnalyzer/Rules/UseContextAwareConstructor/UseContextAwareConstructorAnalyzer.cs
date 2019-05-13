@@ -1,5 +1,5 @@
 using System.Collections.Immutable;
-using ExceptionAnalyzer.Rules.UseMoreSpecificExceptionType;
+using System.Linq;
 using JetBrains.Annotations;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -44,24 +44,18 @@ namespace ExceptionAnalyzer.Rules.UseContextAwareConstructor
                  var symbolInfo = syntaxNodeContext.SemanticModel.GetSymbolInfo(objectCreation);
                  if (symbolInfo.Symbol is IMethodSymbol methodSymbol)
                  {
-                     for (var i = 0; i < forbiddenSignatures.Length; i++)
-                     {
-                         if (methodSymbol.HasSignature(forbiddenSignatures[i]))
-                         {
-                             return false;
-                         }
-                     }
+                     return forbiddenSignatures.Any(t => t.IsSimilarTo(methodSymbol)) == false;
                  }
             }
 
             return true;
         }
 
-        private static readonly string[][] forbiddenSignatures = new[]
+        private static readonly MethodSignature[] forbiddenSignatures = new[]
         {
-            new[] {"String"},
-            new[] {"String", "Exception"},
-            new[] {"SerializationInfo", "StreamingContext"}
+            new MethodSignature(new MethodParameter("String", "message")), 
+            new MethodSignature(new MethodParameter("String", "message"), new MethodParameter("Exception", "innerException")), 
+            new MethodSignature(new MethodParameter("SerializationInfo", "info"), new MethodParameter("StreamingContext", "context"))
         };
     }
 }
