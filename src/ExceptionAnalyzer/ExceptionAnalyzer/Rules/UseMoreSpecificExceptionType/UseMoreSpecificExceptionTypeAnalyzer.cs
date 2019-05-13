@@ -4,8 +4,9 @@ using JetBrains.Annotations;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
+using SmartanAlyzers.ExceptionAnalyzer.Utils;
 
-namespace ExceptionAnalyzer.Rules.UseMoreSpecificExceptionType
+namespace SmartanAlyzers.ExceptionAnalyzer.Rules.UseMoreSpecificExceptionType
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class UseMoreSpecificExceptionTypeAnalyzer : ThrowExpressionBaseAnalyzer

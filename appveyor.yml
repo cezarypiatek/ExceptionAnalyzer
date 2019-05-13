@@ -30,7 +30,7 @@ build:
   project: src\ExceptionAnalyzer.sln
   verbosity: minimal
 artifacts:
-- path: src\ExceptionAnalyzer\ExceptionAnalyzer.Vsix\bin\Release\ExceptionAnalyzer.vsix
-  name: ExceptionAnalyzer.vsix
-- path: src\ExceptionAnalyzer\ExceptionAnalyzer\bin\Release\ExceptionAnalyzer.*.nupkg
-  name: ExceptionAnalyzer.nupkg
+- path: src\ExceptionAnalyzer\ExceptionAnalyzer.Vsix\bin\Release\SmartanAlyzers.ExceptionAnalyzer.vsix
+  name: SmartanAlyzers.ExceptionAnalyzer.vsix
+- path: src\ExceptionAnalyzer\ExceptionAnalyzer\bin\Release\SmartanAlyzers.ExceptionAnalyzer.*.nupkg
+  name: SmartanAlyzers.ExceptionAnalyzer.nupkg

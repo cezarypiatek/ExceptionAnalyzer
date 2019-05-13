@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
-using ExceptionAnalyzer.Rules.UseMoreSpecificExceptionType;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
+using SmartanAlyzers.ExceptionAnalyzer.Utils;
 
-namespace ExceptionAnalyzer.Rules.ExceptionDrivenLogic
+namespace SmartanAlyzers.ExceptionAnalyzer.Rules.ExceptionDrivenLogic
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class ExceptionDrivenLogicAnalyzer : DiagnosticAnalyzer

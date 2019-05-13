@@ -19,8 +19,8 @@
     <ProjectGuid>{BC3658A4-1AFF-481D-AEF9-973BF43443E4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExceptionAnalyzer.Vsix</RootNamespace>
-    <AssemblyName>ExceptionAnalyzer</AssemblyName>
+    <RootNamespace>SmartanAlyzers.ExceptionAnalyzer.Vsix</RootNamespace>
+    <AssemblyName>SmartanAlyzers.ExceptionAnalyzer</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>

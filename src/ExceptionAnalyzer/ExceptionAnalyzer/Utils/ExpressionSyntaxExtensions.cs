@@ -3,7 +3,7 @@ using System.Linq;
 using JetBrains.Annotations;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace ExceptionAnalyzer.Rules.UseMoreSpecificExceptionType
+namespace SmartanAlyzers.ExceptionAnalyzer.Utils
 {
     public static class ExpressionSyntaxExtensions
     {

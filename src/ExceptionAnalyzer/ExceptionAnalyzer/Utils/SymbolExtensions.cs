@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using Microsoft.CodeAnalysis;
 
-namespace ExceptionAnalyzer.Rules.UseMoreSpecificExceptionType
+namespace SmartanAlyzers.ExceptionAnalyzer.Utils
 {
     internal static class SymbolExtensions
     {

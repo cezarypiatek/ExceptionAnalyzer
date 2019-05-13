@@ -5,7 +5,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 
-namespace ExceptionAnalyzer.Rules.ArgumentExceptionParameterName
+namespace SmartanAlyzers.ExceptionAnalyzer.Rules.ArgumentExceptionParameterName
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class ArgumentExceptionParameterName : ThrowExpressionBaseAnalyzer

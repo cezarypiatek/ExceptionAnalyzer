@@ -1,4 +1,4 @@
-﻿namespace ExceptionAnalyzer.Rules
+﻿namespace SmartanAlyzers.ExceptionAnalyzer.Rules
 {
     internal static class RuleCategories
     {

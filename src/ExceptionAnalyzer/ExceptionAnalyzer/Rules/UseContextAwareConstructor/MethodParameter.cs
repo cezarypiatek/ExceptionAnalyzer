@@ -1,7 +1,7 @@
 using System;
 using Microsoft.CodeAnalysis;
 
-namespace ExceptionAnalyzer.Rules.UseContextAwareConstructor
+namespace SmartanAlyzers.ExceptionAnalyzer.Rules.UseContextAwareConstructor
 {
     class MethodParameter
     {

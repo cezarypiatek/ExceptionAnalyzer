@@ -5,7 +5,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 
-namespace ExceptionAnalyzer.Rules.UseContextAwareConstructor
+namespace SmartanAlyzers.ExceptionAnalyzer.Rules.UseContextAwareConstructor
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class UseContextAwareConstructorAnalyzer : ThrowExpressionBaseAnalyzer

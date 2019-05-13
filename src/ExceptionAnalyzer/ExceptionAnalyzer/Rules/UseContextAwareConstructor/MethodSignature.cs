@@ -1,8 +1,7 @@
 using JetBrains.Annotations;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace ExceptionAnalyzer.Rules.UseContextAwareConstructor
+namespace SmartanAlyzers.ExceptionAnalyzer.Rules.UseContextAwareConstructor
 {
     class MethodSignature
     {

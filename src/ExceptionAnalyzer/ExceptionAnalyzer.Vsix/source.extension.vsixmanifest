@@ -3,7 +3,7 @@
     <Metadata>
         <Identity Id="ExceptionAnalyzer.9ffdf63d-e02d-41c6-9bac-92d04c1e6830" Version="1.0" Language="en-US" Publisher="Cezary Piątek"/>
         <DisplayName>ExceptionAnalyzer</DisplayName>
-        <Description xml:space="preserve">Analyzer for exceptions usagesA</Description>
+        <Description xml:space="preserve">Analyzer for exceptions usages</Description>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0,)" />

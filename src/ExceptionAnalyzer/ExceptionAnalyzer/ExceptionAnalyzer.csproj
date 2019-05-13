@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>ExceptionAnalyzer</PackageId>
+    <PackageId>SmartanAlyzers.ExceptionAnalyzer</PackageId>
     <PackageVersion>1.0.0.0</PackageVersion>
-    <Authors>cepi</Authors>
+    <Authors>Cezary Piatek</Authors>
     <PackageLicenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</PackageLicenseUrl>
     <PackageProjectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</PackageProjectUrl>
     <PackageIconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</PackageIconUrl>
@@ -20,6 +20,8 @@
     <Copyright>Copyright</Copyright>
     <PackageTags>ExceptionAnalyzer, analyzers</PackageTags>
     <NoPackageAnalysis>true</NoPackageAnalysis>
+    <RootNamespace>SmartanAlyzers.ExceptionAnalyzer</RootNamespace>
+    <Product>SmartanAlyzers.ExceptionAnalyzer</Product>
   </PropertyGroup>
 
   <ItemGroup>
