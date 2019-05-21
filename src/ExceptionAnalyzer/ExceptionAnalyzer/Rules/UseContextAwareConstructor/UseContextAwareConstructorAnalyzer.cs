@@ -11,7 +11,7 @@ namespace SmartanAlyzers.ExceptionAnalyzer.Rules.UseContextAwareConstructor
     public class UseContextAwareConstructorAnalyzer : ThrowExpressionBaseAnalyzer
     {
         private const string DiagnosticId = "EX002";
-        private static readonly LocalizableString Title = "UseContextAwareConstructorAnalyzer Title";
+        private static readonly LocalizableString Title = "Use context aware exception constructor";
 
         private static readonly LocalizableString MessageFormat = "Do not use standard exception constructor. Use one that accept context information";
 

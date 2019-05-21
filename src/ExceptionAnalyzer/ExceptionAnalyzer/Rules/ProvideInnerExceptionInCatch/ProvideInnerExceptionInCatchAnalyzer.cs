@@ -15,18 +15,7 @@ namespace SmartanAlyzers.ExceptionAnalyzer.Rules.ProvideInnerExceptionInCatch
         {
             private const string DiagnosticId = "EX003";
             private static readonly LocalizableString Title = "Always provide inner exception when throw from the catch clauses.";
-            private static readonly LocalizableString MessageFormat = "Provide '{0}' as a inner exception when throw from the catch clauses";
-
-            public static DiagnosticDescriptor Create()
-            {
-                return new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, RuleCategories.ExceptionUsages, DiagnosticSeverity.Error, true);
-            }
-        }
-        private static class Rule2Container
-        {
-            private const string DiagnosticId = "EX004";
-            private static readonly LocalizableString Title = "Always provide inner exception when throw from the catch clauses.";
-            private static readonly LocalizableString MessageFormat = "Complete Catch declaration with exception variable and provide it as a inner exception when throw from the catch clauses";
+            private static readonly LocalizableString MessageFormat = "{0}";
 
             public static DiagnosticDescriptor Create()
             {
@@ -35,9 +24,8 @@ namespace SmartanAlyzers.ExceptionAnalyzer.Rules.ProvideInnerExceptionInCatch
         }
 
         private static readonly DiagnosticDescriptor RuleEX003 = Rule1Container.Create();
-        private static readonly DiagnosticDescriptor RuleEX004 = Rule2Container.Create();
 
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } = ImmutableArray.Create(RuleEX003, RuleEX004);
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } = ImmutableArray.Create(RuleEX003);
 
         public override void Initialize(AnalysisContext context)
         {
@@ -75,7 +63,8 @@ namespace SmartanAlyzers.ExceptionAnalyzer.Rules.ProvideInnerExceptionInCatch
         {
             if (string.IsNullOrWhiteSpace(exceptionVariable))
             {
-                syntaxNodeContext.ReportDiagnostic(Diagnostic.Create(RuleEX004, objectCreationExpression.GetLocation()));
+                var diagnostic = Diagnostic.Create(RuleEX003, objectCreationExpression.GetLocation(), "Complete Catch declaration with exception variable and provide it as a inner exception when throw from the catch clauses");
+                syntaxNodeContext.ReportDiagnostic(diagnostic);
                 return;
             }
 
@@ -83,7 +72,8 @@ namespace SmartanAlyzers.ExceptionAnalyzer.Rules.ProvideInnerExceptionInCatch
 
             if (isPassingInner == false)
             {
-                syntaxNodeContext.ReportDiagnostic(Diagnostic.Create(RuleEX003, objectCreationExpression.GetLocation(), exceptionVariable));
+                var diagnostic = Diagnostic.Create(RuleEX003, objectCreationExpression.GetLocation(),  $"Provide '{exceptionVariable}' as a inner exception when throw from the catch clauses");
+                syntaxNodeContext.ReportDiagnostic(diagnostic);
             }
         }
     }

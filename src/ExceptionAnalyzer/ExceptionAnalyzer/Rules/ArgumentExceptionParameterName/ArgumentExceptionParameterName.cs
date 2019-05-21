@@ -11,7 +11,7 @@ namespace SmartanAlyzers.ExceptionAnalyzer.Rules.ArgumentExceptionParameterName
     public class ArgumentExceptionParameterName : ThrowExpressionBaseAnalyzer
     {
         private const string DiagnosticId = "EX005";
-        private static readonly LocalizableString Title = "ArgumentExceptionParameterName Title";
+        private static readonly LocalizableString Title = "Use parameter related exception only for method parameters";
         private static readonly LocalizableString MessageFormat = "Containing method does not declare '{0}' parameter";
         private static  readonly DiagnosticDescriptor Rule = new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, RuleCategories.ExceptionUsages, DiagnosticSeverity.Error, true);
 
