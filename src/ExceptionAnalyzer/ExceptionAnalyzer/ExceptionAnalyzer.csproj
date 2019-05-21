@@ -7,25 +7,28 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>SmartanAlyzers.ExceptionAnalyzer</PackageId>
+    <PackageId>SmartAnalyzers.ExceptionAnalyzer</PackageId>
     <PackageVersion>1.0.0.0</PackageVersion>
     <Authors>Cezary Piatek</Authors>
-    <PackageLicenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</PackageLicenseUrl>
-    <PackageProjectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</PackageProjectUrl>
-    <PackageIconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</PackageIconUrl>
-    <RepositoryUrl>http://REPOSITORY_URL_HERE_OR_DELETE_THIS_LINE</RepositoryUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/smartanalyzers/ExceptionAnalyzer</PackageProjectUrl>
+    <PackageIconUrl>https://github.com/smartanalyzers/ExceptionAnalyzer/raw/master/doc/logo.jpg</PackageIconUrl>
+    <RepositoryUrl>https://github.com/smartanalyzers/ExceptionAnalyzer</RepositoryUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Description>ExceptionAnalyzer</Description>
-    <PackageReleaseNotes>Summary of changes made in this release of the package.</PackageReleaseNotes>
+    <Description>A set of Roslyn analyzers related to exceptions usages</Description>
+    <PackageReleaseNotes></PackageReleaseNotes>
     <Copyright>Copyright</Copyright>
     <PackageTags>ExceptionAnalyzer, analyzers</PackageTags>
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <RootNamespace>SmartanAlyzers.ExceptionAnalyzer</RootNamespace>
-    <Product>SmartanAlyzers.ExceptionAnalyzer</Product>
+    <Product>SmartAnalyzers.ExceptionAnalyzer</Product>
+    <PackageLicenseUrl>https://github.com/cezarypiatek/MappingGenerator/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="2019.1.1" />
+    <PackageReference Include="JetBrains.Annotations" Version="2019.1.1" >
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="2.6.1" PrivateAssets="all" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="2.9.0-beta4-63006-05" PrivateAssets="all" />
     <PackageReference Update="NETStandard.Library" PrivateAssets="all" />
