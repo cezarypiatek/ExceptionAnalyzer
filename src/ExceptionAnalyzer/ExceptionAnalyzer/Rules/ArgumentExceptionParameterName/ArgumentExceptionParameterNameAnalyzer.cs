@@ -8,7 +8,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace SmartanAlyzers.ExceptionAnalyzer.Rules.ArgumentExceptionParameterName
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    public class ArgumentExceptionParameterName : ThrowExpressionBaseAnalyzer
+    public class ArgumentExceptionParameterNameAnalyzer : ThrowExpressionBaseAnalyzer
     {
         private const string DiagnosticId = "EX005";
         private static readonly LocalizableString Title = "Use parameter related exception only for method parameters";
