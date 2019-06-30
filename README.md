@@ -1,1 +1,1 @@
-A set of Roslyn analyzers inspired by [The art of designing exceptions](https://cezarypiatek.github.io/post/the-art-of-designing-exceptions/)
+A set of Roslyn analyzers inspired by [The art of designing exceptions](https://cezarypiatek.github.io/post/the-art-of-designing-exceptions/). A detailed description of currently implemented rules can be find in [Exception usage analyzer](https://cezarypiatek.github.io/post/exceptions-usages-analyzer/) article.
